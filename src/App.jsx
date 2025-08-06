@@ -1,11 +1,19 @@
-import Circle from "./Circle";
+import { Apple, Dribbble, Facebook, Twitch } from "lucide-react";
+import SocialLogin from "./SocialLogin";
 
 function App() {
+  const sns = [
+    { backgroundColor: "#1877f2", icon: <Facebook />, social: "Facebook" },
+    { backgroundColor: "#000000", icon: <Apple />, social: "Apple" },
+    { backgroundColor: "#ea4c89", icon: <Dribbble />, social: "Dribble" },
+    { backgroundColor: "#9146ff", icon: <Twitch />, social: "Twitch" },
+  ];
+
   return (
     <>
-      <Circle size="50px" bg="red"></Circle>
-      <Circle size="100px" bg="blue"></Circle>
-      <Circle size="150px" bg="green"></Circle>
+      {sns.map((v) => (
+        <SocialLogin {...v} />
+      ))}
     </>
   );
 }
